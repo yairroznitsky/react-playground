@@ -1,23 +1,49 @@
-import logo from './logo.svg';
+
+
+import Initials from './Initials/Initials'
+import DayOfWeek from './DayOfWeek';
+import Menu from './Menu/Menu';
+import MenuItem from './Menu/MenuItem/MenuItem';
+import Article from './Article/Article';
+import Counter from './Counter/Counter';
+import StudentPicker from './StudentPicker/StudentPicker';
 import './App.css';
+import RandomColorSquare from './RandomColorSquare/RandomColorSquare';
+
 
 function App() {
+
+  function ClickHandler() {
+    console.log('You Clicked');
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div>
+      {/* <button onClick = {ClickHandler}>Click Me</button> */}
+      <Counter />
+      <StudentPicker />
+
+
+      <Menu>
+        <a href = "/">
+          <MenuItem label = "Homepage" />
         </a>
-      </header>
+        <a href = "/about">
+          <MenuItem label = "About"/>
+        </a>
+        <a href = "/contact">
+          <MenuItem label = "Contact" link = "/contact" />
+        </a>
+      </Menu>
+      <Initials name="Yair Roznitsky" />
+      <Initials name="Shimi Tavori" />
+      ---
+      <DayOfWeek day={3} />
+      <Article content="content" title="title" />
+      <RandomColorSquare />
+      
+     
     </div>
   );
 }
